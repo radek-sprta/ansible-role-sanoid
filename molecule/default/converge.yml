@@ -1,0 +1,33 @@
+---
+- name: Converge
+  hosts: all
+
+  vars:
+    sanoid_datasets:
+      dataset1:
+        process_children_only: "yes"
+        recursive: "yes"
+        use_template: test
+      dataset2:
+        use_template: test
+        yearly: 30
+      dataset3:
+        yearly: 30
+    sanoid_templates:
+      test:
+        autoprune: "yes"
+        autosnap: "yes"
+        hourly: 10
+        monthly: 20
+
+  pre_tasks:
+    - name: Update apt cache.
+      apt:
+        update_cache: true
+        cache_valid_time: 3600
+      when: ansible_os_family == 'Debian'
+
+  tasks:
+    - name: "Include sanoid role"
+      include_role:
+        name: "ansible-role-sanoid"

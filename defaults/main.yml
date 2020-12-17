@@ -1,0 +1,19 @@
+---
+sanoid_package: sanoid
+
+sanoid_templates:
+  example:
+    frequently: 0
+    hourly: 24
+    daily: 7
+    monthly: 12
+    yearly: 0
+    autosnap: "yes"
+    autoprune: "yes"
+
+sanoid_datasets:
+  example:
+    use_template: example
+    recursive: "yes"
+    process_children_only: "yes"
+    yearly: 1

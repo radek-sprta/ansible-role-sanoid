@@ -1,0 +1,23 @@
+---
+- name: Install Sanoid package
+  package:
+    name: "{{ sanoid_package }}"
+    state: present
+
+- name: Create Sanoid configuration directory
+  file:
+    name: /etc/sanoid
+    state: directory
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: Copy Sanoid template
+  template:
+    src: "{{ item | basename }}.j2"
+    dest: "{{ item }}"
+    owner: root
+    group: root
+    mode: "0644"
+  with_items:
+    - "/etc/sanoid/sanoid.conf"

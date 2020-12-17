@@ -1,0 +1,23 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: sanoid
+  author: Radek Sprta
+  description: Install and configure Sanoid for automatic ZFS snapshots.
+  issue_tracker_url: https://gitlab.com/radek-sprta/ansible-role-sanoid/-/issues
+  license: MIT
+  min_ansible_version: 2.4
+
+  platforms:
+    - name: Debian
+      versions:
+        - bullseye
+    - name: Ubuntu
+      versions:
+        - focal
+
+  galaxy_tags:
+    - zfs
+    - snapshots
+    - backups

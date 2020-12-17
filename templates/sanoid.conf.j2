@@ -1,0 +1,19 @@
+#jinja2: lstrip_blocks: "True"
+# {{ ansible_managed }}
+{% for dataset in sanoid_datasets %}
+{% set _dataset = sanoid_datasets[dataset] %}
+[{{ dataset }}]
+    {% for key, value in _dataset.items() %}
+    {{ key }} = {{ value }}
+    {% endfor %}
+{% endfor %}
+
+# Templates
+
+{% for template in sanoid_templates %}
+{% set _template = sanoid_templates[template] %}
+[template_{{ template }}]
+    {% for key, value in _template.items() %}
+    {{ key }} = {{ value }}
+    {% endfor %}
+{% endfor %}

@@ -6,4 +6,5 @@
     - name: Check that Sanoid works and understands the configuration
       command: sanoid
       register: run_sanoid
+      changed_when: false
       failed_when: run_sanoid.rc > 0

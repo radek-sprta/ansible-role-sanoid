@@ -14,6 +14,13 @@ platforms:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
     privileged: true
     pre_build_image: true
+  - name: Bullseye
+    image: docker.io/rsprta/debian-ansible:bullseye
+    command: ''
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    privileged: true
+    pre_build_image: true
 provisioner:
   name: ansible
 verifier:

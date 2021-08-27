@@ -1,5 +1,5 @@
 ---
-image: quay.io/ansible/molecule:3.0.8
+image: quay.io/ansible/toolset
 services:
   - docker:dind
 

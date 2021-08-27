@@ -30,4 +30,4 @@
   tasks:
     - name: "Include sanoid role"
       include_role:
-        name: "ansible-role-sanoid"
+        name: "radek_sprta.sanoid"

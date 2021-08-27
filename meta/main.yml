@@ -4,6 +4,7 @@ dependencies: []
 galaxy_info:
   role_name: sanoid
   author: Radek Sprta
+  namespace: radek_sprta
   description: Install and configure Sanoid for automatic ZFS snapshots.
   issue_tracker_url: https://gitlab.com/radek-sprta/ansible-role-sanoid/-/issues
   license: MIT

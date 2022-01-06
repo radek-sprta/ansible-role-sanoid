@@ -1,9 +1,9 @@
 #jinja2: lstrip_blocks: "True"
 # {{ ansible_managed }}
 {% for dataset in sanoid_datasets %}
-{% set _dataset = sanoid_datasets[dataset] %}
-[{{ dataset }}]
-    {% for key, value in _dataset.items() %}
+{% set dataset_name = dataset.pop('name') %}
+[{{ dataset_name }}]
+    {% for key, value in dataset.items() %}
     {{ key }} = {{ value }}
     {% endfor %}
 {% endfor %}
@@ -11,9 +11,9 @@
 # Templates
 
 {% for template in sanoid_templates %}
-{% set _template = sanoid_templates[template] %}
-[template_{{ template }}]
-    {% for key, value in _template.items() %}
+{% set template_name = template.pop('name') %}
+[template_{{ template_name }}]
+    {% for key, value in template.items() %}
     {{ key }} = {{ value }}
     {% endfor %}
 {% endfor %}

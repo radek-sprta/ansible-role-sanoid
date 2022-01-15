@@ -14,7 +14,7 @@ Package to install. You should not need to override this.
 
 ```yaml
 sanoid_templates:
-  example:
+  - name: example
     frequently: 0
     hourly: 24
     daily: 7
@@ -28,7 +28,7 @@ Dictionary of Sanoid backup templates. The example showcases available options. 
 
 ```yaml
 sanoid_datasets:
-  example:
+  - name: example
     use_template: example
     recursive: "yes"
     process_children_only: "yes"
@@ -43,7 +43,7 @@ Dictionary of datasets to take snapshots of. The example showcases some of the a
 - hosts: all
 
   vars:
-    tank:
+    - name: tank
       process_children_only: "yes"
       recursive: "yes"
       use_template: example

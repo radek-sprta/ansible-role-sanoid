@@ -1,4 +1,10 @@
 ---
+- include_tasks: normalize_datasets.yml
+  when: sanoid_datasets | type_debug == "dict"
+
+- include_tasks: normalize_templates.yml
+  when: sanoid_templates | type_debug == "dict"
+
 - name: Install Sanoid package
   package:
     name: "{{ sanoid_package }}"

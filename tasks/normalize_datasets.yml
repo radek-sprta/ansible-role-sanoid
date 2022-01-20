@@ -13,3 +13,8 @@
 - name: Set sanoid_datasets to the normalized value
   set_fact:
     sanoid_datasets: "{{ __sanoid_datasets }}"
+
+- name: "Trigger deprecation warning"
+  command: /bin/true
+  changed_when: true
+  notify: Deprecation warning

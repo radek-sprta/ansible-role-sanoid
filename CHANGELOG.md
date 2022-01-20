@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2022-01-20
+
+### Deprecated
+
+- Deprecate specifying datasets and templates as dictionary.
+
 ## [1.1.0] - 2022-01-06
 
 ### Added
@@ -19,3 +25,4 @@ characters illegal for Ansible variables in your dataset and template names.
 - First public version.
 
 [1.1.0]: https://gitlab.com/radek-sprta/ansible-role-node-exporter/compare/v1.0.0...v1.1.0
+[1.2.0]: https://gitlab.com/radek-sprta/ansible-role-node-exporter/compare/v1.1.0...v1.2.0

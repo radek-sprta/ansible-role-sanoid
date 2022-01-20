@@ -1,0 +1,6 @@
+---
+- name: Deprecation warning
+  debug:
+    msg: >-
+      DEPRECATION WARNING:
+      You are using on of the deprecated options in docker role.

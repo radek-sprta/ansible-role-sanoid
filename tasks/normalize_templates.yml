@@ -13,3 +13,8 @@
 - name: Set sanoid_templates to the normalized value
   set_fact:
     sanoid_templates: "{{ __sanoid_templates }}"
+
+- name: "Trigger deprecation warning"
+  command: /bin/true
+  changed_when: true
+  notify: Deprecation warning

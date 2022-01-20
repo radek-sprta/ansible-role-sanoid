@@ -13,15 +13,23 @@ before_script:
   - ansible --version
   - molecule --version
 
-test:molecule:
+test:molecule:default:
   stage: test
   variables:
     DOCKER_HOST: "tcp://docker:2375"
     PY_COLORS: 1
     ANSIBLE_FORCE_COLOR: 1
   script:
-    - molecule test -s list
-    - molecule test -s dict
+    - molecule test
+
+test:molecule:deprecated:
+  stage: test
+  variables:
+    DOCKER_HOST: "tcp://docker:2375"
+    PY_COLORS: 1
+    ANSIBLE_FORCE_COLOR: 1
+  script:
+    - molecule test -s deprecated
 
 release:galaxy:
   stage: release

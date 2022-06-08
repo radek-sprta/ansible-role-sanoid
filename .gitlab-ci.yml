@@ -1,5 +1,5 @@
 ---
-image: quay.io/ansible/toolset
+image: rsprta/molecule-runner
 services:
   - docker:dind
 

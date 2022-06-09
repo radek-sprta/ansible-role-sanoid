@@ -1,20 +1,20 @@
 ---
 - name: Convert templates to list
-  set_fact:
+  ansible.builtin.set_fact:
     __sanoid_templates_list: "{{ sanoid_templates | dict2items(key_name='name', value_name='options') }}"
 
 - name: Flatten templates
-  set_fact:
+  ansible.builtin.set_fact:
     __sanoid_templates: "{{ __sanoid_templates | d([]) + [{'name': item.name} | combine(item.options)] }}"
   with_items: "{{ __sanoid_templates_list }}"
   loop_control:
     label: "{{ item.name }}"
 
 - name: Set sanoid_templates to the normalized value
-  set_fact:
+  ansible.builtin.set_fact:
     sanoid_templates: "{{ __sanoid_templates }}"
 
 - name: "Trigger deprecation warning"
-  command: /bin/true
+  ansible.builtin.command: /bin/true
   changed_when: true
   notify: Deprecation warning

@@ -22,12 +22,12 @@
 
   pre_tasks:
     - name: Update apt cache.
-      apt:
+      ansible.builtin.apt:
         update_cache: true
         cache_valid_time: 3600
       when: ansible_os_family == 'Debian'
 
   tasks:
     - name: "Include sanoid role"
-      include_role:
+      ansible.builtin.include_role:
         name: "radek_sprta.sanoid"

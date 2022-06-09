@@ -1,20 +1,20 @@
 ---
 - name: Convert datasets to list
-  set_fact:
+  ansible.builtin.set_fact:
     __sanoid_datasets_list: "{{ sanoid_datasets | dict2items(key_name='name', value_name='options') }}"
 
 - name: Flatten datasets
-  set_fact:
+  ansible.builtin.set_fact:
     __sanoid_datasets: "{{ __sanoid_datasets | d([]) + [{'name': item.name} | combine(item.options)] }}"
   with_items: "{{ __sanoid_datasets_list }}"
   loop_control:
     label: "{{ item.name }}"
 
 - name: Set sanoid_datasets to the normalized value
-  set_fact:
+  ansible.builtin.set_fact:
     sanoid_datasets: "{{ __sanoid_datasets }}"
 
 - name: "Trigger deprecation warning"
-  command: /bin/true
+  ansible.builtin.command: /bin/true
   changed_when: true
   notify: Deprecation warning

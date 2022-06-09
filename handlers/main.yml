@@ -1,6 +1,6 @@
 ---
 - name: Deprecation warning
-  debug:
+  ansible.builtin.debug:
     msg: >-
       DEPRECATION WARNING:
       You are using on of the deprecated options in sanoid role.

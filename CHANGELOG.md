@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
+### Added
+
+- Support for Ubuntu 22.04.
+
 ### Removed
 
 - Remove compatibility with Ansible 2.9 and lower.

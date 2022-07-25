@@ -8,7 +8,7 @@ lint: |
   ansible-lint
 platforms:
   - name: ansible-role-sanoid
-    image: docker.io/"${MOLECULE_IMAGE:-rsprta/debian-ansible:bullseye}"
+    image: docker.io/${MOLECULE_IMAGE:-rsprta/debian-ansible:bullseye}
     command: ''
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro

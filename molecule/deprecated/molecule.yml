@@ -7,15 +7,8 @@ lint: |
   yamllint .
   ansible-lint
 platforms:
-  - name: Focal
-    image: docker.io/geerlingguy/docker-ubuntu2004-ansible
-    command: ''
-    volumes:
-      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    privileged: true
-    pre_build_image: true
-  - name: Bullseye
-    image: docker.io/rsprta/debian-ansible:bullseye
+  - name: ansible-role-sanoid
+    image: docker.io/"${MOLECULE_IMAGE:-rsprta/debian-ansible:bullseye}"
     command: ''
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
